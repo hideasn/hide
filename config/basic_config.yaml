@@ -1,5 +1,5 @@
 # 域名
-host: http://localhost:8080/
+host: https://store-ttpp.mgthai.com/
 
 # 0代表执行Excel和yaml两种格式的用例， 1 代表Excel用例，2 代表 yaml文件用例
 case: 1

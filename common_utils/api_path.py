@@ -17,7 +17,7 @@ root_path = dirname(dirname(abspath(__file__)))
 data_path = root_path + os.sep + "data" + os.sep
 
 # 用例执行路径
-case_path = root_path + os.sep + "test_cases" + os.sep
+case_path = root_path + os.sep + "test_case" + os.sep
 
 # 生成报告路径
 auto_gen_case_path = root_path + os.sep + "outputs\generate_case" + os.sep

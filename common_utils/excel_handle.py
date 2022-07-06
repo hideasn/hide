@@ -7,7 +7,7 @@
 # @Software: PyCharm
 # @time: 2022/7/4 11:16
 # @description :
-import pprint
+
 
 from openpyxl import load_workbook
 
@@ -38,7 +38,7 @@ class ReadExcel:
                     _dict["feature"] = wb.cell(row, column=CaseEnum.CASE_FEATURE.value).value
                     _dict["title"] = wb.cell(row, column=CaseEnum.CASE_TITLE.value).value
                     _dict["url"] = wb.cell(row, column=CaseEnum.API_PATH.value).value
-                    _dict["head"] = wb.cell(row, column=CaseEnum.API_HEADER.value).value
+                    _dict["header"] = wb.cell(row, column=CaseEnum.API_HEADER.value).value
                     _dict["method"] = wb.cell(row, column=CaseEnum.API_METHOD.value).value
                     _dict["pk"] = wb.cell(row, column=CaseEnum.API_PK.value).value
                     _dict["data"] = wb.cell(row, column=CaseEnum.API_DATA.value).value
@@ -52,9 +52,10 @@ class ReadExcel:
 
 
 if __name__ == '__main__':
-    exec_instance = ReadExcel(data_path + "test_demo.xlsx")
+    exec_instance = ReadExcel(data_path + "test_case.xlsx")
     result = exec_instance.read_excel()
     print(result)
+    print(result[0]["head"]["uid"])
 
 
 

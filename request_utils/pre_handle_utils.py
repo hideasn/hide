@@ -9,12 +9,17 @@
 # @description :
 import json
 import re
+import os
 
 from common_utils.global_vars import GLOBAL_VARS
 from common_utils.yaml_handle import basic_yaml_data
 from string import Template
-from common_utils.logger_handle import logger
+# from common_utils.logger_handle import logger
+from outputs.Logs.log_handle import get_log
 from common_utils.allure_step import allure_step
+from common_utils.exec_default_func import exec_func
+
+logger = get_log(os.path.split(__file__)[-1])
 
 
 def pre_expr_handle(content):
@@ -63,7 +68,7 @@ class RequestPreDataHandle:
         if url.lower().startswith("http"):
             self.request_data["url"] = url
         else:
-            if host.endwith("/") or url.startswith("/"):
+            if host.endswith("/") or url.startswith("/"):
                 self.request_data["url"] = host+url
             else:
                 self.request_data["url"] = host + "/" + url
@@ -74,7 +79,7 @@ class RequestPreDataHandle:
         allure_step("请求头处理", self.request_data.get("header", None))
         if self.request_data.get("header", None):
             logger.info(f"处理请求前头: {self.request_data.get('header', None)}")
-            self.request_data["header"] = str_to_python(pre_expr_handle(self.request_data.get("data", None)))
+            self.request_data["header"] = str_to_python(pre_expr_handle(self.request_data.get("header", None)))
             logger.info(f"处理请求后头: {self.request_data['header']}")
 
     def _data_handle(self):

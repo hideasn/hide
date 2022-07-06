@@ -1,0 +1,1 @@
+"https://store-ttpp.mgthai.com/api/v1/app/authorization"

@@ -24,5 +24,5 @@ content: 附件内容
 
 
 def allure_step(step_title, content):
-    with allure_step(step_title):
-        allure.attach(json.dump(content, indent=4, ensure_ascii=False), step_title, allure.attachment_type.TEXT)
+    with allure.step(step_title):
+        allure.attach(json.dumps(content, ensure_ascii=False, indent=4), step_title, allure.attachment_type.TEXT)

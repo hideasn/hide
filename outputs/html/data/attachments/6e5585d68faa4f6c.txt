@@ -1,0 +1,1 @@
+"{\"token_type\": \"$.message.token_type\", \"access_token\": \"$.message.access_token\"}"

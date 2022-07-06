@@ -30,10 +30,11 @@ class YamlHandle:
             return yaml.dump(data, stream=f, allow_unicode=True)
 
 
-yaml_data = YamlHandle("../config/config.yaml").read_yaml()
-basic_yaml_data = YamlHandle("../config/basic_config.yaml").read_yaml()
+# yaml_data = YamlHandle("../config/config.yaml").read_yaml()
+basic_yaml_data = YamlHandle("./config/basic_config.yaml").read_yaml()
 
 if __name__ == '__main__':
-    read_yaml = YamlHandle("../config/config.yaml").read_yaml()
-    print(type(read_yaml))
-    print(read_yaml)
+    print(basic_yaml_data)
+    # read_yaml = YamlHandle("../config/config.yaml").read_yaml()
+    # print(type(read_yaml))
+    # print(read_yaml)

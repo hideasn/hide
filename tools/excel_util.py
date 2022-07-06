@@ -24,7 +24,7 @@ class ExcelUtil:
 
     def read_excel(self):
         # 1.打开要读取的excel文件
-        wb = load_workbook("../data/testcase.xlsx")
+        wb = load_workbook("../data/test_case.xlsx")
 
         # 2.获取sheet
         sheets = wb.sheetnames
